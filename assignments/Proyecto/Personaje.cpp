@@ -59,7 +59,7 @@ void Personaje::imprimeBarra()const{
 int Personaje::calculaAtaque(Personaje& objetivo){
     int mitad = ataque / 2;
     if (objetivo.getNivel() > nivel) {
-        return rand() % (mitad - 0 + 1) + 0;
+        return rand() % (mitad - 1 + 1) + 1;
     }
     else {
         return rand() % (ataque - mitad + 1) + mitad;
