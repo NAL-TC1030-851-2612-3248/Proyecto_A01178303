@@ -14,10 +14,7 @@ class Personaje{
         void setAtaque(int a);
         int porcentajeSalud();
         void imprimeBarra()const;
-
-
-
-
+        int calculaAtaque(Personaje& objetivo);
 
     private:
         int vida;
