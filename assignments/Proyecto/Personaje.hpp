@@ -1,4 +1,3 @@
-// Crear el archivo header de la clase Personaje, no olvides las guardas o el pragma.
 #pragma once
 class Personaje{
     public:
@@ -15,6 +14,9 @@ class Personaje{
         int porcentajeSalud();
         void imprimeBarra()const;
         int calculaAtaque(Personaje& objetivo);
+        void recibeAtaque(int ptosAtaque);
+        void atacar(Personaje& objetivo);
+        void imprimir();
 
     private:
         int vida;

@@ -1,4 +1,3 @@
-//GEnera la implementación de la clase base Personaje
 #include <iostream>
 #include <ctime>
 #include "Personaje.hpp"
@@ -53,6 +52,7 @@ void Personaje::imprimeBarra()const{
     int vacio = 20 - lleno;
     for (int i = 0; i < lleno; i++) cout << "%";
     for (int i = 0; i < vacio; i++) cout << "=";
+    cout<<endl;
 }
 
 //rand() % (maximo - minimo + 1) + minimo;
@@ -66,4 +66,22 @@ int Personaje::calculaAtaque(Personaje& objetivo){
     }
 }
 
+void Personaje::recibeAtaque(int ptosAtaque){
+    salud -= ptosAtaque;
+    if(salud<0){
+        salud=0;
+    }
+}
 
+void Personaje::atacar(Personaje& objetivo){
+    int ptosAtaque = calculaAtaque(objetivo);
+    objetivo.recibeAtaque(ptosAtaque);
+}
+
+void Personaje::imprimir(){
+    cout<<"Vida:" <<vida<<endl;
+    cout<<"Salud:" <<salud<<endl;
+    cout<<"Nivel:" <<nivel<<endl;
+    cout<<"Ataque:" <<ataque<<endl;
+    imprimeBarra();
+}
