@@ -74,7 +74,8 @@ void Personaje::recibeAtaque(int ptosAtaque){
 }
 
 void Personaje::atacar(Personaje& objetivo){
-    objetivo.recibeAtaque(calculaAtaque(objetivo));
+    int ptosAtaque = calculaAtaque(objetivo);
+    objetivo.recibeAtaque(ptosAtaque);
 }
 
 void Personaje::imprimir(){

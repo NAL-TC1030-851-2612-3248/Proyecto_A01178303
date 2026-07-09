@@ -10,7 +10,6 @@ class Guerrero : public Personaje{
         void setFuerza(int);
         int calculaAtaque(Personaje& objetivo);
         void recibeAtaque(int ptosAtaque);
-        void atacar(Personaje& objetivo);
     private:
         int fuerza;
         //Fuerza max 5
