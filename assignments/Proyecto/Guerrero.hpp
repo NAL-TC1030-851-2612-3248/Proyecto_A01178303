@@ -13,7 +13,7 @@ class Guerrero : public Personaje{
     private:
         int fuerza;
         //Fuerza max 5
-        //Guerrero: calculaAtaque = Ataque + fuerza * 2
-        //          recibeAtaque = ptosAtaque - fuerza
+        /*Guerrero: calculaAtaque = Ataque + fuerza * 2
+                    recibeAtaque = ptosAtaque - fuerza*/
 
 };
