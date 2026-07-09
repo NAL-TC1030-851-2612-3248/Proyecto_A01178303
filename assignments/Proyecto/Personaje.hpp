@@ -7,10 +7,10 @@ class Personaje{
         int getSalud() const;
         int getNivel() const;
         int getAtaque() const;
-        void setVida(int v);
-        void setSalud(int s);
-        void setNivel(int n);
-        void setAtaque(int a);
+        void setVida(int vida_);
+        void setSalud(int salud_);
+        void setNivel(int nivel_);
+        void setAtaque(int ataque_);
         int porcentajeSalud();
         void imprimeBarra()const;
         int calculaAtaque(Personaje& objetivo);

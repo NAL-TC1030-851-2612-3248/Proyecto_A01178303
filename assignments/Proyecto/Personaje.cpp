@@ -6,16 +6,16 @@ using namespace std;
 
 Personaje::Personaje(){
     vida = 100;
-    salud = 80;
+    salud = 100;
     nivel = 1;
     ataque = 10;
 }
 
-Personaje::Personaje(int vida, int salud, int nivel, int ataque){
-            this->vida = vida;
-            this->salud = salud;
-            this->nivel = nivel;
-            this->ataque = ataque;
+Personaje::Personaje(int vida_, int salud_, int nivel_, int ataque_){
+            vida = vida_;
+            salud = salud_;
+            nivel = nivel_;
+            ataque = ataque_;
 }
 
 
@@ -32,17 +32,17 @@ int Personaje::getNivel() const{
 int Personaje::getAtaque() const{
     return ataque;
 }
-void Personaje::setVida(int v){
-    vida = v;
+void Personaje::setVida(int vida_){
+    vida = vida_;
 }
-void Personaje::setSalud(int s){
-    salud = s;
+void Personaje::setSalud(int salud_){
+    salud = salud_;
 }
-void Personaje::setNivel(int n){
-    nivel = n;
+void Personaje::setNivel(int nivel_){
+    nivel = nivel_;
 }
-void Personaje::setAtaque(int a){
-    ataque = a;
+void Personaje::setAtaque(int ataque_){
+    ataque = ataque_;
 }
 int Personaje::porcentajeSalud(){
     return (salud*100)/vida;
@@ -74,8 +74,7 @@ void Personaje::recibeAtaque(int ptosAtaque){
 }
 
 void Personaje::atacar(Personaje& objetivo){
-    int ptosAtaque = calculaAtaque(objetivo);
-    objetivo.recibeAtaque(ptosAtaque);
+    objetivo.recibeAtaque(calculaAtaque(objetivo));
 }
 
 void Personaje::imprimir(){
