@@ -1,6 +1,5 @@
 #include "Guerrero.hpp"
 #include <iostream>
-using namespace std;
 
 Guerrero::Guerrero(){
     fuerza = 1;
@@ -46,4 +45,9 @@ void Guerrero::recibeAtaque(int ptosAtaque){
         ptosAtaque = 0;
     }
     Personaje::recibeAtaque(ptosAtaque);
+}
+
+void Guerrero::imprimir(){
+    Personaje::imprimir();
+    std::cout<<"Fuerza: "<<fuerza<<std::endl;
 }
