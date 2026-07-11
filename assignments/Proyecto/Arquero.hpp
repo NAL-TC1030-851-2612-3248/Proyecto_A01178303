@@ -12,5 +12,5 @@ class Arquero : public Personaje{
         void imprimir();
     private:
         int precision;
-        // % en entero para acertar un critico de puntos de ataque * 5. Max 75% min 10%.
+        // % en entero para acertar un critico (puntos de ataque * 5). Max 75% min 10%.
 };

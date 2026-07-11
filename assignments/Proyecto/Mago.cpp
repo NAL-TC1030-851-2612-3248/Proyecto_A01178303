@@ -48,7 +48,7 @@ int Mago::calculaCurar(){
                break;
         case 4: pntosCurar = rand() % (15 - 8 + 1) + 8;
                break;
-        case 5: pntosCurar = rand() % (25 - 15 + 1) + 10;
+        case 5: pntosCurar = rand() % (25 - 10 + 1) + 10;
                break;
         default: pntosCurar = 0;
         }
