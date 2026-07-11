@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 #include <ctime>
 #include "Personaje.hpp"
 using namespace std;
@@ -76,6 +77,13 @@ void Personaje::recibeAtaque(int ptosAtaque){
 void Personaje::atacar(Personaje& objetivo){
     int ptosAtaque = calculaAtaque(objetivo);
     objetivo.recibeAtaque(ptosAtaque);
+}
+
+void Personaje::recibeCurar(int pntosCurar){
+    salud += pntosCurar;
+    if (salud>vida){
+        salud = vida;
+    }
 }
 
 void Personaje::imprimir(){

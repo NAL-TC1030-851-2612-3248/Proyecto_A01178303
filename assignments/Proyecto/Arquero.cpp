@@ -30,7 +30,6 @@ void Arquero::setPrecision(int precision_){
 
 int Arquero::calculaAtaque(Personaje& objetivo){
     bool critico;
-    srand(time(0)); 
     if (rand() % 100 < precision) {
         critico = true;
     } 

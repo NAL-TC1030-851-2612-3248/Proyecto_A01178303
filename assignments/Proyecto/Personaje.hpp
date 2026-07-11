@@ -16,6 +16,7 @@ class Personaje{
         int calculaAtaque(Personaje& objetivo);
         void recibeAtaque(int ptosAtaque);
         void atacar(Personaje& objetivo);
+        void recibeCurar(int pntosCurar);
         void imprimir();
 
     private:
