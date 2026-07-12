@@ -5,7 +5,7 @@
 using namespace std;
 
 Arquero::Arquero(){
-    precision = 10;
+    precision = 5;
 }
 
 Arquero::Arquero(int vida_, int salud_, int nivel_, int ataque_, int precision_): Personaje(vida_, salud_, nivel_, ataque_){
@@ -17,11 +17,11 @@ double Arquero::getPrecision() const{
 }
 
 void Arquero::setPrecision(int precision_){
-    if(precision<10){
-        precision = 10;
+    if(precision<5){
+        precision = 5;
     }
-    else if(precision>75){
-        precision = 75;
+    else if(precision>35){
+        precision = 35;
     }
     else{
         precision = precision_;

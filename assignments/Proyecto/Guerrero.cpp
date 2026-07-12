@@ -1,5 +1,6 @@
 #include "Guerrero.hpp"
 #include <iostream>
+#include <cmath>
 
 Guerrero::Guerrero(){
     fuerza = 1;
@@ -33,18 +34,37 @@ void Guerrero::setFuerza(int fuerza_){
     }
 }
 
+float Guerrero::calculaFuerzaAtaq() const{
+    switch(fuerza){
+        case 1: return 1.2;
+        case 2: return 1.4;
+        case 3: return 1.6;
+        case 4: return 1.8;
+        case 5: return 2;
+        default: return 1;
+    }
+}
+
+float Guerrero::calculaFuerzaDef() const{
+    switch(fuerza){
+        case 1: return 0.9;
+        case 2: return 0.8;
+        case 3: return 0.7;
+        case 4: return 0.6;
+        case 5: return 0.5;
+        default: return 1;
+    }
+}
+
 int Guerrero::calculaAtaque(Personaje& objetivo){
     int ataqueBase = Personaje::calculaAtaque(objetivo);
-    int ataqueFinal = ataqueBase + fuerza * 2;
+    int ataqueFinal = std::round(ataqueBase * calculaFuerzaAtaq());
     return ataqueFinal;
 }
 
 void Guerrero::recibeAtaque(int ptosAtaque){
-    ptosAtaque -= fuerza;
-    if(ptosAtaque < 0){
-        ptosAtaque = 0;
-    }
-    Personaje::recibeAtaque(ptosAtaque);
+    int ptosAtaqueFinal = ptosAtaque * calculaFuerzaDef();
+    Personaje::recibeAtaque(ptosAtaqueFinal);
 }
 
 void Guerrero::imprimir(){

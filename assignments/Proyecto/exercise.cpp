@@ -1,10 +1,19 @@
 #include <iostream>
 #include "Personaje.hpp"
+#include "Guerrero.hpp"
+#include "Arquero.hpp"
+#include "Mago.hpp"
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
-int main() 
-{
-  srand(time(0));
-  cout << __cplusplus << endl;
-  return 0;
+int main() {
+
+  Guerrero guerrero;
+  Arquero arquero;
+  Mago mago;
+
+  guerrero.atacar(arquero);
+  arquero.imprimir();
+
 }
