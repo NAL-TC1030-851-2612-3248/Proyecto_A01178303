@@ -1,16 +1,14 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Debug Proyecto",
             "type": "lldb",
             "request": "launch",
-            "name": "Debug",
-            "program": "${fileDirname}/build/dexercise",
+            "program": "${workspaceFolder}/assignments/Proyecto/exercise",
+            "cwd": "${workspaceFolder}/assignments/Proyecto",
             "args": [],
-            "cwd": "${workspaceFolder}"
+            "preLaunchTask": "Compilar Proyecto"
         }
     ]
 }

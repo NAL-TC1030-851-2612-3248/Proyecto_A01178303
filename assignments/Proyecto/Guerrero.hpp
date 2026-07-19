@@ -10,9 +10,10 @@ class Guerrero : public Personaje{
         void setFuerza(int);
         float calculaFuerzaAtaq() const;
         float calculaFuerzaDef() const;
-        int calculaAtaque(Personaje& objetivo);
-        void recibeAtaque(int ptosAtaque);
-        void imprimir();
+        int calculaAtaque(Personaje& objetivo) override;
+        void recibeAtaque(int ptosAtaque) override;
+        void revive(int) override;
+        void imprimir() override;
     private:
         int fuerza;
         //Fuerza max 5

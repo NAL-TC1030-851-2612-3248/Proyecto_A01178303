@@ -1,28 +1,26 @@
 {
+    "version": "2.0.0",
     "tasks": [
         {
-            "type": "cppbuild",
-            "label": "C/C++: g++ compilar archivo activo",
-            "command": "/usr/bin/g++",
+            "label": "Compilar Proyecto",
+            "type": "shell",
+            "command": "g++",
             "args": [
-                "-fdiagnostics-color=always",
+                "*.cpp",
                 "-g",
-                "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "exercise"
             ],
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "${workspaceFolder}/assignments/Proyecto"
             },
-            "problemMatcher": [
-                "$gcc"
-            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "Tarea generada por el depurador."
+            "problemMatcher": [
+                "$gcc"
+            ]
         }
-    ],
-    "version": "2.0.0"
+    ]
 }

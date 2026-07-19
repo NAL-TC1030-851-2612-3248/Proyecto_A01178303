@@ -10,7 +10,9 @@ class Mago : public Personaje{
         void setNivelClerigo(int);
         int calculaCurar();
         void curar(Personaje& objetivo);
-        void imprimir();
+        void revive(int pntosCurar) override;
+        void revivir(Personaje&);
+        void imprimir() override;
     private:
         int nivelClerigo;
             //Nivel 1-5 que determina que tanto sana el mago.

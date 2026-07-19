@@ -58,9 +58,35 @@ int Mago::calculaCurar(){
 void Mago::curar(Personaje& objetivo){
     int pntosCurar = calculaCurar();
     objetivo.recibeCurar(pntosCurar);
+    if(pntosCurar==1){
+        cout<<"Objetivo curado por un punto."<<endl<<endl;
+    }
+    else{
+        cout<<"Objetivo curado por "<<pntosCurar<<" puntos."<<endl<<endl;
+    }
+    }
+
+void Mago::revive(int pntosCurar){
+    if(getVida()==0){
+        setVida(pntosCurar);
+        cout<<"El mago revivio con "<<pntosCurar<<" puntos de vida."<<endl<<endl;
+    }
+    else{
+        cout<<"El mago sigue con vida."<<endl<<endl;
+    }
+}
+
+void Mago::revivir(Personaje& objetivo){
+    double porcentaje = nivelClerigo * 0.1;
+    if(porcentaje>1){
+        porcentaje = 1;
+    }
+    int pntosVida = objetivo.getSalud() * porcentaje;
+    objetivo.revive(pntosVida);
 }
 
 void Mago::imprimir(){
     Personaje::imprimir();
-    cout<< "Clerigo Nivel: "<< nivelClerigo<<endl;
+    cout<<"Clase: Mago"<<endl;
+    cout<< "Clerigo Nivel: "<<nivelClerigo<<endl<<endl;
 }

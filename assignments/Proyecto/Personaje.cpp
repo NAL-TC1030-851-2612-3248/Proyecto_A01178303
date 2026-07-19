@@ -49,7 +49,7 @@ int Personaje::porcentajeSalud(){
     return (salud*100)/vida;
 }
 void Personaje::imprimeBarra()const{
-    int lleno = (salud*20)/100;
+    int lleno = (vida*20)/100;
     int vacio = 20 - lleno;
     for (int i = 0; i < lleno; i++) cout << "%";
     for (int i = 0; i < vacio; i++) cout << "=";
@@ -68,9 +68,9 @@ int Personaje::calculaAtaque(Personaje& objetivo){
 }
 
 void Personaje::recibeAtaque(int ptosAtaque){
-    salud -= ptosAtaque;
-    if(salud<0){
-        salud=0;
+    vida -= ptosAtaque;
+    if(vida<0){
+        vida=0;
     }
 }
 
@@ -80,16 +80,16 @@ void Personaje::atacar(Personaje& objetivo){
 }
 
 void Personaje::recibeCurar(int pntosCurar){
-    salud += pntosCurar;
-    if (salud>vida){
-        salud = vida;
+    vida += pntosCurar;
+    if (vida>salud){
+        vida = salud;
     }
 }
 
 void Personaje::imprimir(){
-    cout<<"Vida:" <<vida<<endl;
-    cout<<"Salud:" <<salud<<endl;
-    cout<<"Nivel:" <<nivel<<endl;
-    cout<<"Ataque:" <<ataque<<endl;
+    cout<<"Vida: " <<vida<<endl;
+    cout<<"Salud Maxima: " <<salud<<endl;
+    cout<<"Nivel: " <<nivel<<endl;
+    cout<<"Ataque: " <<ataque<<endl;
     imprimeBarra();
 }

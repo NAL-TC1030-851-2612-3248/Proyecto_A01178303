@@ -7,13 +7,36 @@
 #include <ctime>
 using namespace std;
 
-int main() {
+int main(){
 
-  Guerrero guerrero;
-  Arquero arquero;
-  Mago mago;
+srand(time(0));
 
-  guerrero.atacar(arquero);
-  arquero.imprimir();
+Guerrero* guerrero = new Guerrero();
+Arquero* arquero = new Arquero();
+Mago* mago = new Mago();
+
+guerrero->imprimir();
+arquero->imprimir();
+mago->imprimir();
+
+for(int i = 0; i<12; i++){
+  guerrero->atacar(*arquero);
+}
+
+arquero->imprimir();
+
+mago->revivir(*arquero);
+
+arquero->imprimir();
+
+mago->revivir(*arquero);
+
+mago->curar(*arquero);
+
+arquero->imprimir();
+
+delete guerrero;
+delete arquero;
+delete mago;
 
 }

@@ -67,7 +67,19 @@ void Guerrero::recibeAtaque(int ptosAtaque){
     Personaje::recibeAtaque(ptosAtaqueFinal);
 }
 
+void Guerrero::revive(int pntosCurar){
+    if(getVida()==0){
+        setVida(pntosCurar);
+        std::cout<<"El guerrero revivio con "<<pntosCurar<<" puntos de vida."<<std::endl<<std::endl;
+    }
+    else{
+        std::cout<<"El guerrero sigue con vida."<<std::endl<<std::endl;
+    }
+
+}
+
 void Guerrero::imprimir(){
     Personaje::imprimir();
-    std::cout<<"Fuerza: "<<fuerza<<std::endl;
+    std::cout<<"Clase: Guerrero"<<std::endl;
+    std::cout<<"Fuerza Nivel: "<<fuerza<<std::endl<<std::endl;
 }

@@ -5,7 +5,7 @@
 using namespace std;
 
 Arquero::Arquero(){
-    precision = 5;
+    precision = 10;
 }
 
 Arquero::Arquero(int vida_, int salud_, int nivel_, int ataque_, int precision_): Personaje(vida_, salud_, nivel_, ataque_){
@@ -45,7 +45,19 @@ int Arquero::calculaAtaque(Personaje& objetivo){
     }
 }
 
+void Arquero::revive(int pntosCurar){
+    if(getVida()==0){
+        setVida(pntosCurar);
+        cout<<"El arquero revivio con "<<pntosCurar<<" puntos de vida."<<endl<<endl;
+    }
+    else{
+        cout<<"El arquero sigue con vida."<<endl<<endl;
+    }
+
+}
+
 void Arquero::imprimir(){
     Personaje::imprimir();
-    cout<<"Precision: "<<precision<<endl;
+    cout<<"Clase: Arquero"<<endl;
+    cout<<"Precision: "<<precision<<"%"<<endl<<endl;
 }

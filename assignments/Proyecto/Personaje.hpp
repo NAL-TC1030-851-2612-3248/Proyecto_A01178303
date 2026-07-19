@@ -13,11 +13,12 @@ class Personaje{
         void setAtaque(int ataque_);
         int porcentajeSalud();
         void imprimeBarra()const;
-        int calculaAtaque(Personaje& objetivo);
-        void recibeAtaque(int ptosAtaque);
+        virtual int calculaAtaque(Personaje& objetivo);
+        virtual void recibeAtaque(int ptosAtaque);
         void atacar(Personaje& objetivo);
         void recibeCurar(int pntosCurar);
-        void imprimir();
+        virtual void revive(int) = 0;
+        virtual void imprimir();
 
     private:
         int vida;
