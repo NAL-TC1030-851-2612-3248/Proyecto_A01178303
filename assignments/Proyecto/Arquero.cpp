@@ -56,8 +56,9 @@ void Arquero::revive(int pntosCurar){
 
 }
 
-void Arquero::imprimir(){
-    Personaje::imprimir();
-    cout<<"Clase: Arquero"<<endl;
-    cout<<"Precision: "<<precision<<"%"<<endl<<endl;
+void Arquero::imprimir(std::ostream& os) const {
+    Personaje::imprimir(os);
+    os<<"Clase: Arquero"<<endl;
+    os<<"Precision: "<<precision<<endl;
+    Personaje::imprimeBarra();
 }

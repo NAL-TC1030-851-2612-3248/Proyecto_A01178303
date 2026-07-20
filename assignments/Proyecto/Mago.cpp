@@ -85,8 +85,9 @@ void Mago::revivir(Personaje& objetivo){
     objetivo.revive(pntosVida);
 }
 
-void Mago::imprimir(){
-    Personaje::imprimir();
-    cout<<"Clase: Mago"<<endl;
-    cout<< "Clerigo Nivel: "<<nivelClerigo<<endl<<endl;
+void Mago::imprimir(ostream& os) const {
+    Personaje::imprimir(os);
+    os<<"Clase: Mago"<< endl;
+    os <<"Nivel de clérigo: "<<nivelClerigo<<endl;
+    Personaje::imprimeBarra();
 }

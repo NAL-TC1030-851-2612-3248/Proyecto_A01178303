@@ -12,7 +12,7 @@ class Mago : public Personaje{
         void curar(Personaje& objetivo);
         void revive(int pntosCurar) override;
         void revivir(Personaje&);
-        void imprimir() override;
+        void imprimir(std::ostream& os) const override;
     private:
         int nivelClerigo;
             //Nivel 1-5 que determina que tanto sana el mago.

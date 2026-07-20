@@ -5,38 +5,47 @@
 #include "Mago.hpp"
 #include <cstdlib>
 #include <ctime>
+#include <vector>
 using namespace std;
 
 int main(){
 
 srand(time(0));
 
-Guerrero* guerrero = new Guerrero();
-Arquero* arquero = new Arquero();
-Mago* mago = new Mago();
+vector<Personaje*> personajes;
 
-guerrero->imprimir();
-arquero->imprimir();
-mago->imprimir();
+personajes.push_back(new Guerrero());
+personajes.push_back(new Arquero());
+personajes.push_back(new Mago());
 
-for(int i = 0; i<12; i++){
-  guerrero->atacar(*arquero);
+cout<<"===== PERSONAJES ====="<<endl;
+
+for (Personaje* p : personajes){
+    cout<<*p<<endl;
 }
 
-arquero->imprimir();
+cout<<"===== COMBATES ====="<<endl;
 
-mago->revivir(*arquero);
+for(int i = 0;i<6; i++){
+personajes[0]->atacar(*personajes[1]);
+}
+cout<<*personajes[1]<<endl;
 
-arquero->imprimir();
+for(int i = 0; i<5; i++){
+personajes[0]->atacar(*personajes[2]);
+}
+cout<<*personajes[2]<<endl;
 
-mago->revivir(*arquero);
+for(int i = 0; i<20; i++){
+personajes[1]->atacar(*personajes[0]);
+}
+cout<<*personajes[0]<<endl;
 
-mago->curar(*arquero);
+personajes[0]->revive(15);
 
-arquero->imprimir();
+cout<<*personajes[0]<<endl;
 
-delete guerrero;
-delete arquero;
-delete mago;
-
+for(Personaje* p : personajes){
+    delete p;
+}
 }

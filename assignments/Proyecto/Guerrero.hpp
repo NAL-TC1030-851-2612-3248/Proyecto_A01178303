@@ -13,7 +13,7 @@ class Guerrero : public Personaje{
         int calculaAtaque(Personaje& objetivo) override;
         void recibeAtaque(int ptosAtaque) override;
         void revive(int) override;
-        void imprimir() override;
+        void imprimir(std::ostream& os) const override;
     private:
         int fuerza;
         //Fuerza max 5

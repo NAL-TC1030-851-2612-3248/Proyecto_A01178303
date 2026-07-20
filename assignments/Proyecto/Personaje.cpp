@@ -86,10 +86,16 @@ void Personaje::recibeCurar(int pntosCurar){
     }
 }
 
-void Personaje::imprimir(){
-    cout<<"Vida: " <<vida<<endl;
-    cout<<"Salud Maxima: " <<salud<<endl;
-    cout<<"Nivel: " <<nivel<<endl;
-    cout<<"Ataque: " <<ataque<<endl;
-    imprimeBarra();
+void Personaje::imprimir(ostream& os) const{
+    os<<"Vida: "<<vida<<endl;
+    os<<"Salud Maxima: "<<salud<<endl;
+    os<<"Nivel: "<<nivel<<endl;
+    os<<"Ataque: "<<ataque<<endl;
+}
+
+ostream& operator<<(ostream& os, Personaje& p){
+
+    p.imprimir(os);
+
+    return os;
 }

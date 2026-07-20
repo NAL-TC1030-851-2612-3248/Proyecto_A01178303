@@ -10,7 +10,7 @@ class Arquero : public Personaje{
         void setPrecision(int);
         int calculaAtaque(Personaje& objetivo) override;
         void revive(int) override;
-        void imprimir() override;
+        void imprimir(std::ostream& os) const override;
     private:
         int precision;
         // % en entero para acertar un critico (puntos de ataque * 5). Max 50% min 10%.

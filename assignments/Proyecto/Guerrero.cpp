@@ -78,8 +78,9 @@ void Guerrero::revive(int pntosCurar){
 
 }
 
-void Guerrero::imprimir(){
-    Personaje::imprimir();
-    std::cout<<"Clase: Guerrero"<<std::endl;
-    std::cout<<"Fuerza Nivel: "<<fuerza<<std::endl<<std::endl;
+void Guerrero::imprimir(std::ostream& os) const {
+    Personaje::imprimir(os);
+    os<<"Clase: Guerrero"<<std::endl;
+    os<<"Fuerza: "<<fuerza<<std::endl;
+    Personaje::imprimeBarra();
 }

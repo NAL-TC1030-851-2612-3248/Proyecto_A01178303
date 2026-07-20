@@ -1,4 +1,6 @@
 #pragma once
+#include <iostream>
+
 class Personaje{
     public:
         Personaje();
@@ -18,7 +20,8 @@ class Personaje{
         void atacar(Personaje& objetivo);
         void recibeCurar(int pntosCurar);
         virtual void revive(int) = 0;
-        virtual void imprimir();
+        virtual void imprimir(std::ostream& os) const;
+        friend std::ostream& operator<<(std::ostream& os, Personaje& p);
 
     private:
         int vida;
