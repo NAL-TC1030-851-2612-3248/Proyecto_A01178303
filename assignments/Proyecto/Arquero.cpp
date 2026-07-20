@@ -38,6 +38,7 @@ int Arquero::calculaAtaque(Personaje& objetivo){
     }
 
     if(critico==true){
+        cout<<"CRITICO! ";
         return Personaje::calculaAtaque(objetivo) * 5;
     }
     else{

@@ -38,7 +38,7 @@ personajes[0]->atacar(*personajes[2]);
 cout<<endl;
 cout<<*personajes[2]<<endl;
 
-for(int i = 0; i<20; i++){
+for(int i = 0; i<10; i++){
 personajes[1]->atacar(*personajes[0]);
 }
 cout<<endl;
