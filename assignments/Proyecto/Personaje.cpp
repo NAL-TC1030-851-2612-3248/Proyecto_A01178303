@@ -77,6 +77,7 @@ void Personaje::recibeAtaque(int ptosAtaque){
 void Personaje::atacar(Personaje& objetivo){
     int ptosAtaque = calculaAtaque(objetivo);
     objetivo.recibeAtaque(ptosAtaque);
+    cout<<"Ataque hizo "<<ptosAtaque<<" puntos de ataque."<<endl;
 }
 
 void Personaje::recibeCurar(int pntosCurar){
