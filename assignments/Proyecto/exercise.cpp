@@ -26,13 +26,13 @@ for (Personaje* p : personajes){
 
 cout<<"===== COMBATES ====="<<endl;
 
-for(int i = 0;i<6; i++){
+for(int i = 0;i<10; i++){
 personajes[0]->atacar(*personajes[1]);
 }
 cout<<endl;
 cout<<*personajes[1]<<endl;
 
-for(int i = 0; i<5; i++){
+for(int i = 0; i<10; i++){
 personajes[0]->atacar(*personajes[2]);
 }
 cout<<endl;
